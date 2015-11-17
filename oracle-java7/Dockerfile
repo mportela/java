@@ -8,12 +8,9 @@
 # Pull base image.
 FROM ubuntu:15.04
 
-
-#install deps
-RUN apt-get update && apt-get install python-software-properties
-
 # Install Java.
 RUN \
+  apt-get install -y --no-install-recommends software-properties-common && \
   echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
   add-apt-repository -y ppa:webupd8team/java && \
   apt-get update && \
