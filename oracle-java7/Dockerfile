@@ -10,7 +10,7 @@ FROM ubuntu:15.04
 
 # Install Java.
 RUN \
-  apt-get install -y --no-install-recommends software-properties-common && \
+  apt-get install -y --no-install-recommends software-properties-common ttf-mscorefonts && \
   echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
   add-apt-repository -y ppa:webupd8team/java && \
   apt-get update && \
