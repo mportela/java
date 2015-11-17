@@ -8,6 +8,10 @@
 # Pull base image.
 FROM ubuntu:15.04
 
+
+#install deps
+RUN apt-get update && apt-get install python-software-properties
+
 # Install Java.
 RUN \
   echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
